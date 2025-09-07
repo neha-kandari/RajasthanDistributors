@@ -8,7 +8,6 @@ interface VehicleModel {
   id: string;
   name: string;
   image: string;
-  year: string;
   type: string;
 }
 
@@ -24,91 +23,78 @@ const MahindraPartsPage = () => {
       id: 'xuv700',
       name: 'XUV 700',
       image: '/cars/Mahindra XUV700.png',
-      year: '2021-2024',
       type: 'SUV'
     },
     {
       id: 'scorpio-n',
       name: 'Scorpio N',
       image: '/cars/Mahindra Scorpio N.png',
-      year: '2022-2024',
       type: 'SUV'
     },
     {
       id: 'scorpio',
       name: 'Scorpio',
       image: '/cars/Mahindra Scorpio.png',
-      year: '2014-2024',
       type: 'SUV'
     },
     {
       id: 'scorpio-classic',
       name: 'Scorpio Classic',
       image: '/cars/Scorpio 2006-2009.png',
-      year: '2006-2009',
       type: 'SUV'
     },
     {
       id: 'thar',
       name: 'Thar',
       image: '/cars/Mahindra Thar .png',
-      year: '2020-2024',
       type: 'SUV'
     },
     {
       id: 'thar-roxx',
       name: 'Thar ROXX',
       image: '/cars/Mahindra Thar ROXX SUV.png',
-      year: '2024',
       type: 'SUV'
     },
     {
       id: 'xuv500',
       name: 'XUV 500',
       image: '/cars/Mahindra XUV500.png',
-      year: '2011-2021',
       type: 'SUV'
     },
     {
       id: 'xuv300',
       name: 'XUV 300',
       image: '/cars/MahindraXUV300.png',
-      year: '2019-2024',
       type: 'Compact SUV'
     },
     {
       id: 'bolero-neo',
       name: 'Bolero Neo',
       image: '/cars/Mahindra Bolero Neo.png',
-      year: '2021-2024',
       type: 'SUV'
     },
     {
       id: 'bolero-pickup',
       name: 'Bolero Pickup',
       image: '/cars/Mahindra Bolero pickup.png',
-      year: '2007-2024',
       type: 'Pickup Truck'
     },
     {
       id: 'marazzo',
       name: 'Marazzo',
       image: '/cars/Mahindra Marazzo.png',
-      year: '2018-2024',
       type: 'MPV'
     },
     {
       id: 'xylo',
       name: 'Xylo',
       image: '/cars/Mahindra Xylo.png',
-      year: '2009-2019',
       type: 'MPV'
     },
     {
       id: 'kuv100-nxt',
       name: 'KUV100 NXT',
       image: '/cars/Mahindra KUV100 NXT.png',
-      year: '2017-2021',
       type: 'Micro SUV'
     }
   ];
@@ -199,11 +185,8 @@ const MahindraPartsPage = () => {
                   <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                     {model.name}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-1">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {model.type}
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {model.year}
                   </p>
                 </div>
               </motion.div>
