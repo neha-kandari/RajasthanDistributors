@@ -37,7 +37,7 @@ const Header = () => {
         <div className="flex items-center px-4 md:px-8 bg-[#d1d1d1] dark:bg-[#353535] min-w-[220px]">
           <Link href="/" className="flex items-center space-x-2 md:space-x-3 hover:opacity-80 transition-opacity duration-300">
             <Image 
-              src={theme === 'dark' ? '/images/logo1.png' : '/images/logoLight.png'}
+              src={theme === 'dark' ? '/images/Logo1.png' : '/images/logolight.png'}
               alt="Logo" 
               width={78} 
               height={52} 
@@ -68,7 +68,7 @@ const Header = () => {
             </Link>
             <Link 
               href="/categories" 
-              className={`font-bold transition-all duration-200 relative pb-1 ${pathname === '/categories' ? 'text-[#e53935]' : 'text-gray-800 dark:text-white'} hover:text-[#e53935] ${pathname === '/categories' ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#e53935]' : ''} hover:after:content-[""] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-[#e53935]`}
+              className={`font-bold transition-all duration-200 relative pb-1 ${pathname === '/categories' ? 'text-[#e53935]' : 'text-gray-800 dark:text-white'} hover:text-[#e53935] ${pathname === '/categories' ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#e53935]' : ''} hover:after:content-[""] hover:after:absolute hover:after:bottom-0 hover:after:left-0 after:w-full hover:after:h-0.5 hover:after:bg-[#e53935]`}
             >
               Categories
             </Link>
