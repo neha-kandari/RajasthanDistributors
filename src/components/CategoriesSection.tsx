@@ -12,7 +12,6 @@ interface Category {
   icon: string;
   description: string;
   products: number;
-
   details: string;
   features: string[];
 }
@@ -22,12 +21,12 @@ const CategoriesSection = () => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
-  // Use the same categories data from CategoriesPage but with icons from public/icons
+  // Use the same categories data from CategoriesPage but with correct icon paths
   const categories: Category[] = [
     {
       id: 'engine-parts',
       name: 'Engine Parts',
-      icon: '/categories/carEngine.png',
+      icon: '/categories/carEngine/carEngine.png',
       description: 'High-quality engine components for optimal performance and reliability',
       products: 25,
       details: 'Premium engine parts including pistons, valves, gaskets, and timing components. Compatible with all major car brands and models.',
@@ -36,7 +35,7 @@ const CategoriesSection = () => {
     {
       id: 'suspension-parts',
       name: 'Suspension Parts',
-      icon: '/categories/suspensionParts.png',
+      icon: '/categories/SuspensionParts/suspensionParts.png',
       description: 'Complete suspension systems and components for smooth ride quality',
       products: 18,
       details: 'Professional-grade suspension parts including shocks, struts, springs, and bushings for enhanced comfort and handling.',
@@ -45,7 +44,7 @@ const CategoriesSection = () => {
     {
       id: 'clutch-sets',
       name: 'Clutch Sets',
-      icon: '/categories/clutchSet.png',
+      icon: '/categories/clutchSet/clutchSet.png',
       description: 'Complete clutch assemblies and replacement parts for manual transmissions',
       products: 15,
       details: 'High-quality clutch sets including pressure plates, discs, and release bearings designed for smooth operation.',
@@ -54,35 +53,35 @@ const CategoriesSection = () => {
     {
       id: 'body-parts',
       name: 'Body Parts',
-      icon: '/categories/bodyparts.png',
+      icon: '/categories/bodyparts/bodyparts.png',
       description: 'Exterior and interior body components for vehicle restoration and repair',
       products: 30,
       details: 'Wide range of body parts including panels, bumpers, doors, and trim pieces for comprehensive vehicle restoration.',
-      features: ['Perfect Fit', 'Corrosion Resistant', 'Original Design', 'Multiple Options']
+      features: ['Perfect Fit', 'Corrosion Resistant', 'Easy Installation', 'OEM Quality']
     },
     {
       id: 'brake-pads',
       name: 'Brake Pads',
-      icon: '/categories/BreakPads.png',
+      icon: '/categories/BreakPads/BreakPads.png',
       description: 'High-performance brake pads for superior stopping power and safety',
       products: 20,
-      details: 'Premium brake pads manufactured to OEM specifications for optimal braking performance and vehicle safety.',
-      features: ['Superior Stopping', 'Low Noise', 'Dust-Free Formula', 'Extended Life']
+      details: 'Premium brake pads designed for optimal stopping performance and safety across all vehicle types.',
+      features: ['Superior Stopping Power', 'Low Noise', 'Extended Life', 'Dust-Free Formula']
     },
     {
-      id: 'head-lights',
-      name: 'Head Lights',
-      icon: '/categories/headlights.png',
-      description: 'Advanced headlight systems and LED lighting solutions for enhanced visibility',
+      id: 'headlights',
+      name: 'Headlights',
+      icon: '/categories/headlights/headlights.png',
+      description: 'Advanced headlight systems for enhanced visibility and safety',
       products: 12,
-      details: 'Modern headlight assemblies including halogen, xenon, and LED options for improved road visibility and safety.',
-      features: ['Bright Illumination', 'Energy Efficient', 'Weather Resistant', 'Easy Replacement']
+      details: 'Modern headlight assemblies including halogen, xenon, and LED options for improved road visibility.',
+      features: ['Bright Illumination', 'Energy Efficient', 'Weather Resistant', 'Easy Installation']
     },
     {
-      id: 'mirror',
-      name: 'Mirror',
-      icon: '/categories/carMirror.png',
-      description: 'Side mirrors and rearview mirrors for optimal visibility and safety',
+      id: 'mirrors',
+      name: 'Mirrors',
+      icon: '/categories/carMirror/carMirror.png',
+      description: 'Side mirrors and rearview mirrors for optimal visibility',
       products: 8,
       details: 'Complete mirror assemblies including manual and electric options with heating and turn signal features.',
       features: ['Clear Reflection', 'Adjustable Design', 'Weather Proof', 'Safety Features']
@@ -91,21 +90,29 @@ const CategoriesSection = () => {
       id: 'filters',
       name: 'Filters',
       icon: '/categories/filters.png',
-      description: 'Air, oil, and fuel filters for engine protection and optimal performance',
-      products: 22,
-      details: 'High-efficiency filters including air, oil, fuel, and cabin filters to keep your engine running smoothly.',
-      features: ['High Filtration', 'Long Lasting', 'Easy Installation', 'Multiple Types']
+      description: 'High-quality filters for air, oil, and fuel filtration systems',
+      products: 16,
+      details: 'Premium filtration solutions including air, oil, fuel, and cabin filters for optimal vehicle performance.',
+      features: ['Superior Filtration', 'Extended Life', 'Easy Replacement', 'Multi-Brand Compatibility']
     },
     {
       id: 'air-conditioner',
       name: 'Air Conditioner',
-      icon: '/categories/air conditioner.png',
+      icon: '/categories/air conditioner/air conditioner.png',
       description: 'Complete AC systems and components for optimal cabin comfort',
-      products: 18,
+      products: 10,
       details: 'High-performance air conditioning parts including compressors, condensers, evaporators, and refrigerants for all vehicle types.',
       features: ['Efficient Cooling', 'Energy Saving', 'Quiet Operation', 'Long Service Life']
     }
   ];
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -119,33 +126,24 @@ const CategoriesSection = () => {
     }
   };
 
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setShowLeftArrow(scrollLeft > 0);
-      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
   return (
-    <section className="w-full py-16 md:py-24 transition-colors duration-300">
+    <section className="w-full bg-white dark:bg-[#262626] py-16 md:py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Heading */}
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
-            SEARCH BY <span className="text-red-600">CATEGORY</span>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+            Our <span className="text-red-600">Categories</span>
           </h2>
+          <p className="text-lg text-gray-600 dark:text-white max-w-2xl mx-auto">
+            Explore our comprehensive range of automotive parts and components
+          </p>
         </div>
 
-        {/* Carousel Container */}
         <div className="relative">
           {/* Left Arrow */}
           {showLeftArrow && (
             <button
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-[#2A2929] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-600"
-              aria-label="Scroll left"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-[#262626] shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-[#2A2929] transition-colors duration-200"
             >
               <svg className="w-6 h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -157,8 +155,7 @@ const CategoriesSection = () => {
           {showRightArrow && (
             <button
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-[#2A2929] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-600"
-              aria-label="Scroll right"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-[#262626] shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-[#2A2929] transition-colors duration-200"
             >
               <svg className="w-6 h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
