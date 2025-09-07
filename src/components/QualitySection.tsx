@@ -16,7 +16,7 @@ const QualitySection = () => {
             </h2>
             
             <p className="text-gray-800 dark:text-white text-lg md:text-xl leading-relaxed mb-8">
-              With decades of technical expertise and a deep understanding of the Middle East and African region, we are a trusted bearing manufacturer and one of MEA&apos;s leading distributors of aftermarket products from leading brands and a trusted provider of automotive or industrial maintenance, repair, and operations (MRO).
+              With over 55 years of experience in the automotive industry, Rajasthan Auto Distributors has established itself as a trusted name in Delhi&apos;s automotive parts distribution. We specialize in genuine Mahindra parts, engine components, suspension systems, and a comprehensive range of aftermarket automotive products. Our commitment to quality, reliability, and customer satisfaction has made us the preferred choice for automotive workshops, service centers, and individual vehicle owners across North India.
             </p>
             
             {/* Contact Us Button */}
