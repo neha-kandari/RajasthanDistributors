@@ -85,7 +85,7 @@ const Footer = () => {
               <div className="flex-1 min-w-0">
                 <span className="font-semibold">Address:</span>
                 <a 
-                  href="https://maps.google.com/?q=1073/5,+Bara+Bazar,+opp+G.N.+Auto+Market,+Main+Gate,+Kashmere+Gate,+Delhi-6" 
+                  href="https://www.google.com/maps/place//@28.6635185,77.2303687,21z/data=!4m6!1m5!3m4!2zMjjCsDM5JzQ4LjciTiA3N8KwMTMnNDkuOSJF!8m2!3d28.6635274!4d77.2305196?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-[#e53935] transition-colors duration-200 text-gray-800 dark:text-[#e53935] block sm:inline ml-1 break-words"
