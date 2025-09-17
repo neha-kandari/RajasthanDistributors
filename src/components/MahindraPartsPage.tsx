@@ -185,7 +185,7 @@ const MahindraPartsPage = () => {
                   <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                     {model.name}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-white">
                     {model.type}
                   </p>
                 </div>
