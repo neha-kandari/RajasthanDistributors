@@ -22,12 +22,12 @@ const CategoriesSection = () => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
-  // Use the same categories data from CategoriesPage but with icons from public/icons
+  // Use the same categories data from CategoriesPage but with icons from public/categories
   const categories: Category[] = [
     {
       id: 'engine-parts',
       name: 'Engine Parts',
-      icon: '/categories/carEngine.png',
+      icon: '/categories/carEngine/carEngine.png',
       description: 'High-quality engine components for optimal performance and reliability',
       products: 25,
       details: 'Premium engine parts including pistons, valves, gaskets, and timing components. Compatible with all major car brands and models.',
@@ -36,7 +36,7 @@ const CategoriesSection = () => {
     {
       id: 'suspension-parts',
       name: 'Suspension Parts',
-      icon: '/categories/suspensionParts.png',
+      icon: '/categories/SuspensionParts/suspensionParts.png',
       description: 'Complete suspension systems and components for smooth ride quality',
       products: 18,
       details: 'Professional-grade suspension parts including shocks, struts, springs, and bushings for enhanced comfort and handling.',
@@ -45,7 +45,7 @@ const CategoriesSection = () => {
     {
       id: 'clutch-sets',
       name: 'Clutch Sets',
-      icon: '/categories/clutchSet.png',
+      icon: '/categories/clutchSet/clutchSet.png',
       description: 'Complete clutch assemblies and replacement parts for manual transmissions',
       products: 15,
       details: 'High-quality clutch sets including pressure plates, discs, and release bearings designed for smooth operation.',
@@ -54,7 +54,7 @@ const CategoriesSection = () => {
     {
       id: 'body-parts',
       name: 'Body Parts',
-      icon: '/categories/bodyparts.png',
+      icon: '/categories/bodyparts/bodyparts.png',
       description: 'Exterior and interior body components for vehicle restoration and repair',
       products: 30,
       details: 'Wide range of body parts including panels, bumpers, doors, and trim pieces for comprehensive vehicle restoration.',
@@ -63,7 +63,7 @@ const CategoriesSection = () => {
     {
       id: 'brake-pads',
       name: 'Brake Pads',
-      icon: '/categories/BreakPads.png',
+      icon: '/categories/BreakPads/BreakPads.png',
       description: 'High-performance brake pads for superior stopping power and safety',
       products: 20,
       details: 'Premium brake pads manufactured to OEM specifications for optimal braking performance and vehicle safety.',
@@ -72,7 +72,7 @@ const CategoriesSection = () => {
     {
       id: 'head-lights',
       name: 'Head Lights',
-      icon: '/categories/headlights.png',
+      icon: '/categories/headlights/headlights.png',
       description: 'Advanced headlight systems and LED lighting solutions for enhanced visibility',
       products: 12,
       details: 'Modern headlight assemblies including halogen, xenon, and LED options for improved road visibility and safety.',
@@ -81,7 +81,7 @@ const CategoriesSection = () => {
     {
       id: 'mirror',
       name: 'Mirror',
-      icon: '/categories/carMirror.png',
+      icon: '/categories/carMirror/carMirror.png',
       description: 'Side mirrors and rearview mirrors for optimal visibility and safety',
       products: 8,
       details: 'Complete mirror assemblies including manual and electric options with heating and turn signal features.',
@@ -99,7 +99,7 @@ const CategoriesSection = () => {
     {
       id: 'air-conditioner',
       name: 'Air Conditioner',
-      icon: '/categories/air conditioner.png',
+      icon: '/categories/air conditioner/air conditioner.png',
       description: 'Complete AC systems and components for optimal cabin comfort',
       products: 18,
       details: 'High-performance air conditioning parts including compressors, condensers, evaporators, and refrigerants for all vehicle types.',
