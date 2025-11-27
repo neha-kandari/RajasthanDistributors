@@ -118,14 +118,14 @@ const Footer = () => {
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
           <span>Developed by</span>
-          {/* <a 
+        <a 
             href="https://www.xpanix.com/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-[#e53935] hover:text-red-700 dark:hover:text-red-400 font-semibold transition-colors duration-200"
-          > */}
-           Neha
-          {/* </a> */}
+          > 
+          Xpanix
+       </a> 
           <span className="hidden sm:inline">•</span>
           <a 
             href="https://wa.me/918930005190" 
